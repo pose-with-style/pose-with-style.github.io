@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pose with Style</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Pose with Style: Detail-Preserving Pose-Guided Image Synthesis with Conditional StyleGAN">
+	<meta property="og:url" content="https://pose-with-style.github.io/">
+	<meta property="og:description" content="Pose with Style: Detail-Preserving Pose-Guided Image Synthesis with Conditional StyleGAN">
+	<meta name="keywords" content="pose with style, reposing, human reposing, image synthesis, Badour AlBahar, Jia-Bin Huang, deep learning, computer vision, pose transfer">
+	<meta name="author" content="Badour AlBahar">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+
+		<!-- Title and names. -->
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<font size="5">SIGGRAPH Asia 2021</font>
+				<h1>Pose with Style: Detail-Preserving Pose-Guided Image Synthesis with Conditional StyleGAN</h1>
+				<br>
+				<font size="5">
+				<a href="https://badouralbahar.github.io/">Badour&nbsp;AlBahar<sup>1,2</sup></a> &emsp; <a href="https://research.adobe.com/person/jingwan-lu/">Jingwan&nbsp;Lu<sup>3</sup></a>&emsp;
+				<a href="https://eng.ucmerced.edu/people/jyang44">Jimei&nbsp;Yang<sup>3</sup></a> &emsp; <a href="https://zhixinshu.github.io/">Zhixin&nbsp;Shu<sup>3</sup></a>&emsp;
+				<a href="https://research.adobe.com/person/eli-shechtman/">Eli&nbsp;Shechtman<sup>3</sup></a> &emsp; <a href="https://t.co/tdqrbI7fky?amp=1">Jia-Bin&nbsp;Huang<sup>1,4</sup></a>
+				</font>
+			</div>
+
+			<div class="col-xs-12 text-center">
+				<font size="4"><sup>1</sup>Virginia Tech</font>&emsp;
+				<font size="4"><sup>2</sup>Kuwait University</font>&emsp;
+				<font size="4"><sup>3</sup>Adobe Research</font>&emsp;
+				<font size="4"><sup>4</sup>University of Maryland College Park</font>
+			</div>
+		</div>
+		<br>
+		<!-- end with line. -->
+		<p><hr></p>
+
+		<!-- Links. -->
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<p>
+				<font size="4">
+				<a href="">Paper (PDF)</a> &emsp; | &emsp; <a href="">Code (coming soon)</a> &emsp; |&emsp; <a href="">Results (coming soon)</a>
+				</font>
+			</div>
+		</div>
+		<!-- end with line. -->
+		<p><hr></p>
+
+		<!-- Video Teaser. -->
+		<!-- <div class="row">
+			<div class="col-xs-12 text-center">
+				<img style="float:center; display:inline" src="https://filebox.ece.vt.edu/~Badour/figures/teaser.png" width="100%">
+			</div>
+		</div>
+		<br> -->
+		<div class="container" id="video">
+		  <div class="row">
+		    <h3>Overview video</h3>
+		    <div class="embed-container">
+		      <p style="text-align:left;">
+		      <iframe width="1140" height="540"
+		      src="https://www.youtube.com/embed/d_ETeAVLilw?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+		      </iframe>
+		      </p>
+		    </div>
+		  </div>
+		</div>
+		<!-- end with line. -->
+		<p><hr></p>
+
+		<!-- Abstract. -->
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<br>
+				<p align=justify>
+				<font size="4">
+						We present an algorithm for re-rendering a person from a single image under arbitrary poses. Existing methods often have difficulties in hallucinating occluded contents photo-realistically while preserving the identity and fine details in the source image.
+						We first learn to inpaint the correspondence field between the body surface texture and the source image with a human body symmetry prior.
+						The inpainted correspondence field allows us to transfer/warp local features extracted from the source to the target view even under large pose changes.
+						Directly mapping the warped local features to an RGB image using a simple CNN decoder often leads to visible artifacts.
+						Thus, we extend the StyleGAN generator so that it takes pose as input (for controlling poses) and introduces a spatially varying modulation for the latent space using the warped local features (for controlling appearances).
+						We show that our method compares favorably against the state-of-the-art algorithms in both quantitative evaluation and visual comparison.
+				</font>
+			</div>
+		</div>
+		<!-- end with line. -->
+		<p><hr></p>
+
+
+		<!-- Bibtex. -->
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Bibtex</h3>
+				<pre>@article{albahar2021pose,
+   title   = {Pose with {S}tyle: {D}etail-Preserving Pose-Guided Image Synthesis with Conditional StyleGAN},
+   author  = {AlBahar, Badour and Lu, Jingwan and Yang, Jimei and Shu, Zhixin and Shechtman, Eli and Huang, Jia-Bin},
+   journal = {ACM Transactions on Graphics},
+   year    = {2021}
+}</pre>
+			</div>
+		</div>
+		<!-- end with line. -->
+		<p><hr></p>
+
+
+
+
+<style type="text/css">
+	.container {
+		background-color: #FBFBFC;
+	}
+	.img-responsive {
+		margin: auto;
+	}
+</style>
+
+</body>
+
+<!-- Copyright -->
+<div id="footer">
+  <p style="text-align:center;">Copyright © Badour AlBahar 2021</p>
+</div>
+
+
+</html>
